@@ -111,7 +111,7 @@ jobs:
 ```
 Как только сборка отработает и в github registry появятся ваши образы, можно переходить к блоку настройки Kubernetes
 Успешным результатом данного шага является "зеленая" сборка и "зеленые" тесты
-
+[Зеленые тесты и сборка](https://disk.yandex.ru/i/WfCLll_PDW_rpA)
 
 ### Proxy в Kubernetes
 
@@ -274,9 +274,13 @@ cat .docker/config.json | base64
   ```
   Часть тестов с health-чек упадет, но создание событий отработает.
   Откройте логи event-service и сделайте скриншот обработки событий
+[Тесты](https://disk.yandex.ru/i/mbaRjvn-kQERoA)
+[Логи event-service](https://disk.yandex.ru/i/JBIMhNeYDilNsQ)
 
 #### Шаг 3
 Добавьте сюда скриншота вывода при вызове https://cinemaabyss.example.com/api/movies и  скриншот вывода event-service после вызова тестов.
+[Сриншот вывода при вызове списка фильмов](https://disk.yandex.ru/i/hNHSB0M6cci6Lg)
+[Логи event-service](https://disk.yandex.ru/i/JBIMhNeYDilNsQ)
 
 
 # Задание 4
