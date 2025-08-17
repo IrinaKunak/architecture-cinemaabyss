@@ -357,6 +357,9 @@ minikube tunnel
 https://cinemaabyss.example.com/api/movies
 и приложите скриншот развертывания helm и вывода https://cinemaabyss.example.com/api/movies
 
+[Консоль развертывание + запрос](https://disk.yandex.ru/i/wJsJx3lhKrFccQ)
+[Проверка запроса в браузере](https://disk.yandex.ru/i/g36NGiR6uljnEQ)
+
 ## Удаляем все
 
 ```bash

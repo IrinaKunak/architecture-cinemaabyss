@@ -5,7 +5,7 @@ global:
 
 # Image pull secrets
 imagePullSecrets:
-  dockerconfigjson: ewoJImF1dGhzIjogewoJCSJnaGNyLmlvIjogewoJCQkiYXV0aCI6
+  dockerconfigjson: ewoJImF1dGhzIjogewoJCSJjci51c2Vyc3RvcnkucnUiOiB7fSwKCQkiZ2hjci5pbyI6IHsKCQkJImF1dGgiOiAiU1hKcGJtRkxkVzVoYXpwbmFIQmZSVGxGT1RCVGQyUjBlRGhPWmpoU05XNUZjbmMzYkV4TFZGcFdWR1JxTTBWMVEzQTMiCgkJfSwKCQkiaHR0cHM6Ly9pbmRleC5kb2NrZXIuaW8vdjEvIjoge30KCX0sCgkiY3JlZHNTdG9yZSI6ICJkZXNrdG9wIiwKCSJjdXJyZW50Q29udGV4dCI6ICJkZXNrdG9wLWxpbnV4IiwKCSJwbHVnaW5zIjogewoJCSIteC1jbGktaGludHMiOiB7CgkJCSJlbmFibGVkIjogInRydWUiCgkJfSwKCQkiZGVidWciOiB7CgkJCSJob29rcyI6ICJleGVjIgoJCX0sCgkJInNjb3V0IjogewoJCQkiaG9va3MiOiAicHVsbCxidWlsZHggYnVpbGQiCgkJfQoJfSwKCSJmZWF0dXJlcyI6IHsKCQkiaG9va3MiOiAidHJ1ZSIKCX0KfQo=
 # Database configuration
 database:
   host: postgres
@@ -68,6 +68,13 @@ proxyService:
     port: 80
     targetPort: 8000
     type: ClusterIP
+  env:
+    monolithUrl: "http://monolith:8080"
+    moviesServiceUrl: "http://movies-service:8081"
+    eventsServiceUrl: "http://events-service:8082"
+    gradualMigration: "true"
+    moviesMigrationPercent: "50"
+
 
 # Movies service configuration
 moviesService:
@@ -108,6 +115,8 @@ eventsService:
     port: 8082
     targetPort: 8082
     type: ClusterIP
+  env:
+    kafkaBrokers: kafka:9092
 
 # Kafka configuration
 kafka:
