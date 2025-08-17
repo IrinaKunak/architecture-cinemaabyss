@@ -61,3 +61,11 @@ async def movies_proxy(request: Request, path: str = "") -> Response:
     resp.headers["X-Target-Service"] = name
     return resp
 
+@app.api_route("/api/users", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
+@app.api_route("/api/users/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
+async def users_proxy(request: Request, path: str = "") -> Response:
+    base_url = settings.MONOLITH_URL
+    resp = await _proxy(request, base_url, f"/api/users/{path}".rstrip("/"))
+    resp.headers["X-Target-Service"] = "monolith"
+    return resp
+
