@@ -5,7 +5,7 @@
 1. Спроектируйте to be архитектуру КиноБездны, разделив всю систему на отдельные домены и организовав интеграционное взаимодействие и единую точку вызова сервисов.
 Результат представьте в виде контейнерной диаграммы в нотации С4.
 Добавьте ссылку на файл в этот шаблон
-[ссылка на файл](ссылка)
+[Схема](https://disk.yandex.ru/i/pGaAPC1su7YNsQ)
 
 # Задание 2
 
@@ -58,6 +58,9 @@
 
 Необходимые тесты для проверки этого API вызываются при запуске npm run test:local из папки tests/postman 
 Приложите скриншот тестов и скриншот состояния топиков Kafka из UI http://localhost:8090 
+[Тесты](https://disk.yandex.ru/i/p-uuvGwlP-BwOA)
+[Кафка - топики](https://disk.yandex.ru/i/jD6xtLLZbLCjDw)
+[Кафка - сообщения в payment](https://disk.yandex.ru/i/qKEJH_halezupg)
 
 # Задание 3
 
@@ -108,7 +111,7 @@ jobs:
 ```
 Как только сборка отработает и в github registry появятся ваши образы, можно переходить к блоку настройки Kubernetes
 Успешным результатом данного шага является "зеленая" сборка и "зеленые" тесты
-
+[Зеленые тесты и сборка](https://disk.yandex.ru/i/WfCLll_PDW_rpA)
 
 ### Proxy в Kubernetes
 
@@ -271,9 +274,13 @@ cat .docker/config.json | base64
   ```
   Часть тестов с health-чек упадет, но создание событий отработает.
   Откройте логи event-service и сделайте скриншот обработки событий
+[Тесты](https://disk.yandex.ru/i/mbaRjvn-kQERoA)
+[Логи event-service](https://disk.yandex.ru/i/JBIMhNeYDilNsQ)
 
 #### Шаг 3
 Добавьте сюда скриншота вывода при вызове https://cinemaabyss.example.com/api/movies и  скриншот вывода event-service после вызова тестов.
+[Сриншот вывода при вызове списка фильмов](https://disk.yandex.ru/i/hNHSB0M6cci6Lg)
+[Логи event-service](https://disk.yandex.ru/i/JBIMhNeYDilNsQ)
 
 
 # Задание 4
@@ -349,6 +356,9 @@ minikube tunnel
 Потом вызовите 
 https://cinemaabyss.example.com/api/movies
 и приложите скриншот развертывания helm и вывода https://cinemaabyss.example.com/api/movies
+
+[Консоль развертывание + запрос](https://disk.yandex.ru/i/wJsJx3lhKrFccQ)
+[Проверка запроса в браузере](https://disk.yandex.ru/i/g36NGiR6uljnEQ)
 
 ## Удаляем все
 
